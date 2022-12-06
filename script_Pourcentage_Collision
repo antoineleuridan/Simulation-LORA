@@ -1,0 +1,12 @@
+#!/bin/bash
+rm CourbePourcentageCollision.data
+gcc -Wall Simulation.c -o Simulation -lm
+
+./Simulation f1
+
+
+R CMD BATCH DrawPourcentageCollision.R
+
+
+mv Rplots.pdf courbe_pourcentage.pdf
+mv courbe_pourcentage.pdf Courbe_simulation

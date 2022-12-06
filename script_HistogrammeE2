@@ -1,0 +1,11 @@
+#!/bin/bash
+rm HistogrameTempsE2.data
+gcc -Wall Simulation.c -o Simulation -lm
+
+./Simulation f4
+
+
+R CMD BATCH HistogrameTempsE2.R
+
+mv Rplots.pdf histogrammeE2.pdf
+mv histogrammeE2.pdf Courbe_simulation

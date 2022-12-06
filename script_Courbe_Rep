@@ -1,0 +1,16 @@
+#!/bin/bash
+# rm .RData
+rm Courbe90Pourcen.data
+gcc -Wall Simulation.c -o Simulation -lm
+
+for((c=1;c<=50;c++))
+do 
+
+./Simulation f2
+
+done 
+
+R CMD BATCH Courbes90Pourcen.R
+
+mv Rplots.pdf courbe_reptition_50.pdf
+mv courbe_reptition_50.pdf Courbe_simulation
